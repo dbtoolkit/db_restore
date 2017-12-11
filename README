@@ -1,0 +1,17 @@
+【功能】
+数据库备份恢复还原验证
+
+【目录结构】
+
+├── common       
+│   ├── BackupManager.pm    # 公共函数
+│   ├── Dbconfig.pm    # 公共配置文件
+│   └── ManagerUtil.pm   # 工具包
+├── db_restore.pl     # 备份恢复还原主程序
+└── README
+
+【使用方法】
+从数据库获取参数数据, 通过web页面传入参数调用
+/usr/bin/perl db_restore.pl --source_ip=10.100.100.38 --source_port=3316 --bak_type=mysql --level=instance --level_value=null 
+--is_compressed=y is_encrypted=n --dec_key=xxxxxx --is_slave=y --storage_ip=10.100.100.46 --storage_type=mfs 
+--bak_time='2017-10-22 10:00:00' --data_dir=/data/mysql/my3316 --target_ip=10.100.100.31 --target_port=3316
